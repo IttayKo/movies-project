@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    
+    <style>
+        body {
+            background-color: ivory;
+        }
+        .form {
+            display: block;
+            text-align: center;
+        }
+        
+        input.text {
+            border-color: transparent;
+            border-bottom-color: rgb(173, 173, 173);
+            margin: 40px;
+            background-color: transparent;
+            outline: none;
+            font-size: 14pt;
+            width: 60%;
+
+        }
+        input.btn {
+            font-size: 16pt;
+            height: 40px;
+            width: 100px;
+            border-radius: 80px;
+            border: transparent;
+            background-color: #caa466cc;
+            outline: none;
+            margin: 40px;
+        }
+
+        input.btn:hover {
+            background-color: #3f2907e8;
+            color: ivory;
+        }
+        input.btn:active:active{
+            color: #ffbc57e8;
+        }
+        input.text:focus {
+            border-bottom-color:  #915900;
+        }
+        input.text:not(:placeholder-shown):not(:focus) {
+            border-bottom-color:  #ff9d00d0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+    <h1>Trailers, Descriptions &amp Ratings</h1>
+    <div class="form">
+    <h2>Log in</h2>
+    <form action="">
+        <input id="user" class="text" type="text" name="username" placeholder="Username" on><br>
+        <input id="pass" class="text" type="password" placeholder="Password"><br>
+        <input class="btn" type="button" value="Log In" onclick="login()">
+    </form>
+    </div>
+</div>
+    
+
+<script>
+    let uName = document.getElementById("user");
+    let pWord = document.getElementById("pass");
+    uName.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13 || event.keyCode === 40) {
+            event.preventDefault();
+            pWord.focus();
+        }
+    }
+    
+    );
+
+    pWord.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            pWord.blur();
+            login();
+        }
+        else if (event.keyCode === 38) {
+            event.preventDefault();
+            uName.focus();
+        }
+    });
+    
+    function login() {
+        
+        console.log(uName.value, pWord.value)
+    }
+</script>
+</body>
+
+</html>

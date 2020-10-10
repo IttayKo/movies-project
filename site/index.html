@@ -4,11 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
+<script>
+    function newMovie(url, title, des, rate) {
+        var movJSON
+        fetch('movies.json')
+            .then(res => res.json())
+            .then(json => movJSON = json);
+        var id = JSON.parse((Object.keys(movJSON).length).toString());
+        var embedId = 'https://www.youtube.com/embed/' + url.split("=")[1]
+
+        var data = { id : {'URL': embedId, 'Title': title, 'Description': des, 'Rating': rate} };
+        fetch('movies.json', {
+            method: 'POST',
+            header: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+    }
+
+
+    function showMovies() {
+        fetch('movies.json')
+            .then(res => res.json())
+            .then(json => console.log(json));
+        movJSON.forEach(obj => {
+            let vid = document.createElement("iframe");
+            vid.src = obj['URL']
+            let name = document.createElement("h3");
+            name.innerHTML = obj['Title'];
+            console.log(vid.src)
+            let description = document.createElement("p");
+            description.innerHTML = obj['Description'];
+            let rating = document.createElement("div");
+            rating.innerText = "Rating: " + obj['Rating'];
+            let leftSec = document.createElement("section");
+            leftSec.className = 'left';
+            let rightSec = document.createElement("section");
+            rightSec.className = 'right';
+            var movie = document.createElement("div");
+            movie.className = "movie";
+            document.getElementById("movies").appendChild(movie);
+            movie.appendChild(leftSec);
+            movie.appendChild(rightSec);
+            leftSec.appendChild(vid);
+            leftSec.appendChild(rating);
+            rightSec.appendChild(name);
+            rightSec.appendChild(description);
+                
+            });
+        }    
+    
+
+        
+
+    
+
+</script>
 <style>
     body {margin: 0;}
     .navbar {
         overflow: hidden;
-        background-color: #453400;
+        background-color: #735000;
         position: fixed;
         top: 0;
         width: 100%;
@@ -26,6 +83,62 @@
         background: #cfc1a1;
         color: #3b2900;
     }
+    #left {
+        width: 45%;
+        float: left;
+
+    }
+    #right {
+        width: 55%;
+        float: left;
+    }
+    
+    h1 {
+        font-size: 30pt;
+        text-align: center;
+        color: #390000;
+        margin: 30px;
+    }
+    h2 {
+        margin: 10px;
+        font-size: 24pt;
+        color: #3b2900;
+        float: left;
+        padding-bottom: 30px;
+    }
+    .movie {
+        float: left;
+        height: fit-content;
+        display: block;   
+    }
+    .movie .left {
+        float: left;
+        width: 40%;
+        padding-right: 5%;
+    }
+    .movie .right {
+        float: left;
+        width: 55%;
+    }
+    .movie p {
+        width: 55%;
+        font-size: 14pt;
+        float: left;
+    }
+    .movie h3 {
+        font-size: 20pt;
+        margin: 0;
+    }
+    .movie iframe {
+        display: block;
+        float: left;
+        width: 100%;
+
+    }
+    .movie div {
+        display: block;
+        font-size: 16pt;
+    }
     .main {
         padding: 16px;
         margin-top: 30px;
@@ -37,23 +150,36 @@
 <body style="background-color: ivory;">
     
    
-        <div class="navbar">
-            <a href="">Home</a>
-            <a href="">Login</a>
-            <a href="">Register</a>
-        </div>
-        <div class="main"> 
-        <h1 style="">Trailers, Descriptions &amp Ratings</h1>
-        <section id='left', style="float: left; width: 45%;">
-            <span style="font-size: 24pt;"> Trailer </span>
-    </section>
-    <section id='right' style="float: left; width: 55%">
-        <span style="font-size: 24pt;"> Description</span>
-    </section>
-</div>
+        <nav class="navbar">
+            <a href="index.html"><img src="logo.png" alt="logo" height="12px"></img></a>
 
+            <a href="index.html">Home <img src="home.png" alt="Home"></a>
+            <a href="login.html">Login <img src="arrow-right.png" alt="Login" style="height: 15px;"></a>
+            <a href="signup.html">Sign Up <img src="arrow-up.png" alt="Sign Up" style="height: 15px;"></a>
+        </nav>
+        <div class="main"> 
+        <h1>Trailers, Descriptions &amp Ratings</h1>
+        <section id='left'>
+            <h2> Trailer </h2>
+    </section>
+    <section id='right'>
+        <h2> Description</h2>
+    </section>
+    <div id="movies">
+        <div class="movie">
+        <section class = "left">
+            <iframe width="644" height="362" src="" frameborder="0"; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen;></iframe>
+            <div>Rating: </div>"
+        </section>
+        <section class = "right">
+            <h3>Pirates of the Caribean: The Curse of the Black Pearl</h3>
+            <p>This swash-buckling tale follows the quest of Captain Jack Sparrow, a savvy pirate, and Will Turner, a resourceful blacksmith, as they search for Elizabeth Swann. Elizabeth, the daughter of the governor and the love of Will's life, has been kidnapped by the feared Captain Barbossa. Little do they know, but the fierce and clever Barbossa has been cursed. He, along with his large crew, are under an ancient curse, doomed for eternity to neither live, nor die. That is, unless a blood sacrifice is made.</p>
+        </section>
+    </div>
+    </div>
+</div>
 <footer  style="padding-top: 1000px;">
-<a href="#top">Back To Top</a>
+<a onclick="showMovies()" id="to-top" href="#top">Back To Top</a>
 </footer>
 
 
