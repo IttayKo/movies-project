@@ -6,9 +6,34 @@
     <title>Movies</title>
     
     <style>
-        body {
-            background-color: ivory;
-        }
+    body {
+        margin: 0;
+        background-color: ivory;
+    }
+    .main {
+        padding: 16px;
+        margin-top: 30px;
+    }
+    .navbar {
+        overflow: hidden;
+        background-color: #735000;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    .navbar a {
+        float: left;
+        display: block;
+        color: #ffffff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .navbar a:hover {
+        background: #cfc1a1;
+        color: #3b2900;
+    }
         .form {
             display: block;
             text-align: center;
@@ -52,6 +77,13 @@
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <a href="index.html"><img src="logo.png" alt="logo" height="12px"></img></a>
+
+        <a href="index.html">Home <img src="home.png" alt="Home" style="height: 15px;"></a>
+        <a href="login.html">Login <img src="arrow-right.png" alt="Login" style="height: 15px;"></a>
+        <a href="signup.html">Sign Up <img src="arrow-up.png" alt="Sign Up" style="height: 15px;"></a>
+    </nav>
     <div class="main">
     <h1>Trailers, Descriptions &amp Ratings</h1>
     <div class="form">
