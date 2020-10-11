@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    background-color: ivory;
+}
+.main {
+    padding: 16px;
+    margin-top: 30px;
+    font-family: 'Gill Sans';
+}
+
+
+
+.navbar {
+    overflow: hidden;
+    background-image: linear-gradient(#ffeebf, #ffdf88);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+.navbar a {
+    margin: 0;
+    border: 0;
+    float: left;
+    display: block;
+    color: #997000;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
+.navbar a img {
+    height: 15px;
+}
+
+#logo-link {
+    padding: 5px;
+    height: 40px;
+    width: 15%;
+}
+#logo-link > img {
+    height: 100%;
+}
+
+.navbar a:hover {
+    background-color: #be850073;
+    color:  #705200;
+}
+.form {
+    display: block;
+    text-align: center;
+}
+
+#user, #pass {
+    border-color: transparent;
+    border-bottom-color: rgb(173, 173, 173);
+    margin: 40px;
+    background-color: transparent;
+    outline: none;
+    font-size: 14pt;
+    width: 60%;
+
+}
+
+#fNameNew, #lNameNew, #userNew, #passNew, #emailNew, #passNew2 {
+    border-color: transparent;
+    border-bottom-color: rgb(173, 173, 173);
+    margin: 40px;
+    float: left;
+    background-color: transparent;
+    outline: none;
+    font-size: 14pt;
+    width: 40%;
+
+}
+.sign {
+    float: left;
+    width: 100%;
+}
+
+input.btn {
+    font-size: 16pt;
+    height: 40px;
+    width: 100px;
+    border-radius: 80px;
+    border: transparent;
+    background-color: #caa466cc;
+    outline: none;
+    margin: 40px;
+}
+
+input.btn:hover {
+    background-color: #3f2907e8;
+    color: ivory;
+}
+input.btn:active:active{
+    color: #ffbc57e8;
+}
+input.text:focus {
+    border-bottom-color:  #915900;
+}
+input.text:not(:placeholder-shown):not(:focus) {
+    border-bottom-color:  #ff9d00d0;
+}
+#left {
+    width: 45%;
+    float: left;
+    border-bottom-color: #a16916;
+
+}
+#right {
+    width: 55%;
+    float: left;
+    border-bottom-color: #a16916;
+}
+
+h1 {
+    font-size: 30pt;
+    text-align: center;
+    color: #390000;
+    margin: 30px;
+}
+h2 {
+    margin: 0;
+    font-size: 24pt;
+    color: #3b2900;
+    float: left;
+    padding-bottom: 50px;
+
+}
+.movie {
+    float: left;
+    height: fit-content;
+    display: block;   
+}
+.movie .left {
+    float: left;
+    width: 40%;
+    padding-right: 5%;
+}
+.movie .right {
+    float: left;
+    width: 55%;
+}
+.movie p {
+    font-size: 14pt;
+    float: left;
+}
+.movie h3 {
+    font-size: 20pt;
+    margin: 0;
+}
+.movie iframe {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 260px;
+
+}
+.movie div {
+    display: block;
+    font-size: 16pt;
+}

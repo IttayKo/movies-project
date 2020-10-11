@@ -5,91 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
     
-    <style>
-    body {
-        margin: 0;
-        background-color: ivory;
-    }
-    .main {
-        padding: 16px;
-        margin-top: 30px;
-    }
-    .navbar {
-        overflow: hidden;
-        background-color: #735000;
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-    .navbar a {
-        float: left;
-        display: block;
-        color: #ffffff;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-    }
-    .navbar a:hover {
-        background: #cfc1a1;
-        color: #3b2900;
-    }
-        .form {
-            display: block;
-            text-align: center;
-        }
-        
-        input.text {
-            border-color: transparent;
-            border-bottom-color: rgb(173, 173, 173);
-            margin: 40px;
-            background-color: transparent;
-            outline: none;
-            font-size: 14pt;
-            width: 60%;
-
-        }
-        input.btn {
-            font-size: 16pt;
-            height: 40px;
-            width: 100px;
-            border-radius: 80px;
-            border: transparent;
-            background-color: #caa466cc;
-            outline: none;
-            margin: 40px;
-        }
-
-        input.btn:hover {
-            background-color: #3f2907e8;
-            color: ivory;
-        }
-        input.btn:active:active{
-            color: #ffbc57e8;
-        }
-        input.text:focus {
-            border-bottom-color:  #915900;
-        }
-        input.text:not(:placeholder-shown):not(:focus) {
-            border-bottom-color:  #ff9d00d0;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar" id="yA">
-        <a href="index.html"><img src="logo.png" alt="logo" height="12px"></img></a>
+    <nav class="navbar">
+        <a id="logo-link" href="index.html"><img id="logo" src="logo.png" alt="logo"></img></a>
 
-        <a href="index.html">Home <img src="home.png" alt="Home" style="height: 15px;"></a>
-        <a href="login.html">Login <img src="arrow-right.png" alt="Login" style="height: 15px;"></a>
-        <a href="signup.html">Sign Up <img src="arrow-up.png" alt="Sign Up" style="height: 15px;"></a>
+        <a href="index.html">Home <img src="home.png" alt="Home"></a>
+        <a href="login.html">Login <img src="arrow-right.png" alt="Login"></a>
+        <a href="signup.html">Sign Up <img src="arrow-up.png" alt="Sign Up"></a>
     </nav>
     <div class="main">
     <h1>Trailers, Descriptions &amp Ratings</h1>
+    <h2 class="sign">Log in</h2>
     <div class="form">
-    <h2>Log in</h2>
     <form action="">
-        <input id="user" class="text" type="text" name="username" placeholder="Username" on><br>
+        <input id="user" class="text" type="text" name="username" placeholder="Username"><br>
         <input id="pass" class="text" type="password" placeholder="Password"><br>
         <input class="btn" type="button" value="Log In" onclick="login()">
     </form>
